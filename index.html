@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>曲绍阳｜摄影作品集</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain"></div>
+  <header class="topbar">
+    <div class="brand mono">QU SHAOYANG / PHOTOGRAPHY PORTFOLIO</div>
+    <nav class="nav mono">
+      <button data-go="hero" class="active">刊头</button>
+      <button data-go="archive">影像档案</button>
+      <button data-go="method">摄影理解</button>
+      <button data-go="contact">联系</button>
+    </nav>
+  </header>
+
+  <main class="book">
+    <section id="hero" class="panel hero is-active">
+      <div class="hero-copy">
+        <p class="kicker mono">editorial portfolio / photographic observation</p>
+        <h1>曲绍阳</h1>
+        <h2>摄影爱好者，主要展示对光影、构图、色彩与质感的理解。</h2>
+        <p class="lede">
+          这是一份面向求职场景的摄影作品集。我不强调职业摄影师身份，而是通过真实拍摄作品，展示自己如何观察画面、判断空间、控制色彩，并从照片中读出氛围与细节。
+        </p>
+        <div class="hero-meta mono">
+          <span>光影</span><span>构图</span><span>色彩</span><span>质感</span>
+        </div>
+      </div>
+      <figure class="cover-card" data-open="7">
+        <img src="images/photo-08.jpg" alt="香港维港日落全景" />
+        <figcaption class="mono">点击封面图查看拆解 / HONG KONG PANORAMA</figcaption>
+      </figure>
+    </section>
+
+    <section id="archive" class="panel archive">
+      <div class="section-head">
+        <p class="kicker mono">selected archive / stacked gallery</p>
+        <h3>17 张照片作为视觉样本，点击任意卡片展开拆解。</h3>
+        <p class="section-desc">卡片被设计成杂志资料夹式堆叠：先看整体气质，再展开阅读每张图的光影、构图、色彩与质感。</p>
+      </div>
+      <div id="stackGallery" class="stack-gallery"></div>
+      <p class="hint mono">TIP：点击卡片展开；使用键盘 ← / → 可在展开状态切换图片，ESC 关闭。</p>
+    </section>
+
+    <section id="method" class="panel method">
+      <div class="section-head">
+        <p class="kicker mono">methodology</p>
+        <h3>我如何观察一张照片的光影、构图、色彩与质感。</h3>
+      </div>
+      <div class="method-grid">
+        <article><span class="mono">01</span><h4>光影</h4><p>判断光源方向、阴影逻辑、反射关系与高光扩散是否自然。好的照片，首先要让光看起来“有理由”。</p></article>
+        <article><span class="mono">02</span><h4>构图</h4><p>判断主体位置、前中后景层次、线条引导和画面重心是否稳定。构图不是摆整齐，而是让视线有路径可走。</p></article>
+        <article><span class="mono">03</span><h4>色彩</h4><p>关注冷暖关系、色彩锚点、饱和度控制与整体调性是否统一。颜色不是越多越好，而是要形成秩序。</p></article>
+        <article><span class="mono">04</span><h4>质感</h4><p>检查水面、雪、雾、建筑边缘、树叶、灯光等细节是否符合真实世界规律。质感决定照片是否“站得住”。</p></article>
+      </div>
+    </section>
+
+    <section id="contact" class="panel footer-panel">
+      <div class="footer-card">
+        <p class="kicker mono">about & contact</p>
+        <h3>期待这次实习机会。</h3>
+        <p class="footer-lede">摄影是我观察世界、训练视觉判断的方式。以下是我的背景与联系方式。</p>
+        <div class="about-facts mono">
+          <div><span class="k">教育</span><span class="v">香港理工大学 · 人工智能与大数据计算（硕士）　/　天津师范大学 · 智能科学与技术（本科）</span></div>
+          <div><span class="k">成绩</span><span class="v">专业排名前 5% · GPA 3.7/4.0 · 雅思 6.5</span></div>
+          <div><span class="k">方向</span><span class="v">AI 产品 / AI SaaS · RAG · Agent · 多模态</span></div>
+        </div>
+        <div class="contact-row mono">
+          <a href="mailto:a18526103303@163.com">a18526103303@163.com</a>
+          <a href="tel:18526103303">18526103303</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="pager mono">
+    <button id="prev">← 上一页</button>
+    <span id="count">01 / 04</span>
+    <button id="next">下一页 →</button>
+  </div>
+
+  <aside id="modal" class="modal" aria-hidden="true">
+    <button class="modal-close mono" id="modalClose">关闭 ×</button>
+    <button class="modal-arrow left" id="modalPrev">←</button>
+    <button class="modal-arrow right" id="modalNext">→</button>
+    <div class="modal-inner">
+      <div class="modal-image-wrap"><img id="modalImage" src="" alt="" /></div>
+      <div class="modal-copy">
+        <p id="modalMeta" class="kicker mono"></p>
+        <h3 id="modalTitle"></h3>
+        <p id="modalDesc"></p>
+        <div class="analysis-block"><h4>视觉拆解</h4><p id="modalAnalysis"></p></div>
+      </div>
+    </div>
+  </aside>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
